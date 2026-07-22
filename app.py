@@ -229,7 +229,6 @@ with st.sidebar:
     used_revs = st.number_input("Revisions Used So Far", min_value=0, value=2)
     extra_cost = st.number_input("Cost per Extra Revision ($)", min_value=0, value=50)
     st.divider()
-    api_key = st.text_input("Gemini API Key", type="password")
 
 # ---------------------------------------------------------------------------
 # 5. Baseline Stat Strip
@@ -312,8 +311,10 @@ You are an impartial, highly analytical Project Scope Analyzer. Your sole functi
 # 7. Processing Logic
 # ---------------------------------------------------------------------------
 if run:
+    api_key = st.secrets.get("GEMINI_API_KEY")
+
     if not api_key:
-        st.error("SYSTEM HALT: API Key Required.")
+        st.error("SYSTEM HALT: API Key not configured in Cloud Secrets.")
     elif not client_message:
         st.warning("SYSTEM HALT: Client transmission empty.")
     else:
