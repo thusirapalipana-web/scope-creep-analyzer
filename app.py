@@ -6,7 +6,11 @@ import html as html_lib
 # ---------------------------------------------------------------------------
 # 1. Page configuration
 # ---------------------------------------------------------------------------
-st.set_page_config(page_title="Scope Creep Analyzer", layout="wide")
+st.set_page_config(
+    page_title="Scope Creep Analyzer", 
+    layout="wide", 
+    initial_sidebar_state="expanded"
+)
 
 MODEL_NAME = "gemini-3.6-flash"
 
