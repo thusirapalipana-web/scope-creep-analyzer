@@ -224,7 +224,7 @@ st.markdown("""
 # 4. Sidebar Configuration
 # ---------------------------------------------------------------------------
 with st.sidebar:
-    st.markdown('<div class="sca-side-title">Project Baseline</div>', unsafe_allow_html=True)
+    st.markdown("### PROJECT BASELINE")
     max_revs = st.number_input("Max Revisions Allowed", min_value=1, value=3)
     used_revs = st.number_input("Revisions Used So Far", min_value=0, value=2)
     extra_cost = st.number_input("Cost per Extra Revision ($)", min_value=0, value=50)
