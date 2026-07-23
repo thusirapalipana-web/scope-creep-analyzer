@@ -44,7 +44,9 @@ html, body, [class*="css"], .stApp {
     color: var(--ink) !important; 
 }
 
-#MainMenu, footer, header[data-testid="stHeader"] { display: none !important; }
+/* Sidebar එකේ ඊතලය පෙන්වීමට Header එක Transparent කිරීම */
+#MainMenu, footer { display: none !important; }
+header[data-testid="stHeader"] { background: transparent !important; }
 
 .block-container { 
     max-width: 1040px; 
@@ -207,6 +209,7 @@ div[data-testid="stExpander"] summary { font-family: 'IBM Plex Mono'; color: var
 }
 </style>
 """, unsafe_allow_html=True)
+
 
 # ---------------------------------------------------------------------------
 # 3. Masthead
